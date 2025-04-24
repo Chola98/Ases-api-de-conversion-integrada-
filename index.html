@@ -228,11 +228,13 @@
 
 <script>
   function handleWhatsAppClick() {
-    trackContactEvent();
-    setTimeout(() => {
-      window.location.href = "https://wa.me/3512529124?text=Hola%2C%20quiero%20comunicarme%20con%20un%20cajero%20disponible";
-    }, 500);
-  }
+  trackContactEvent();
+  console.log("👉 Disparando evento ContactRed...");
+  setTimeout(() => {
+    window.location.href = "https://wa.me/3512529124?text=Hola%2C%20quiero%20comunicarme%20con%20un%20cajero%20disponible";
+  }, 1500); // 1.5 segundos para asegurar ejecución
+}
+
 </script>
 
     <div class="benefits">
