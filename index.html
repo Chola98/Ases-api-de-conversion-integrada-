@@ -251,34 +251,46 @@
     const contact_event_id = 'contact_' + Date.now();
 
     function trackContactEvent() {
-      fbq('track', 'Contact', {}, { eventID: contact_event_id });
+  const contact_event_id = 'contact_' + Date.now();
 
-      fetch('https://graph.facebook.com/v19.0/660415223620037/events?access_token=EAATi1xnmdYsBO9eDYNvhTtBca9dMFswWUSIedxSL9dROJWpuAgzBU6LFJtGbWL3FNvB7c2RS9KZAatFxecNmfCKq8dEEoinujJnJeUgLgx4medC6lQPTzmRA1PPiVM1RVZAIWYQVvtM1KMSZBxzDEM11XIHEZA4fZCZC0UOqZCB7alIZAuewGRzmMvd29z1Hr9SBpAZDZD', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          data: [
-            {
-              event_name: "Contact",
-              event_time: Math.floor(Date.now() / 1000),
-              event_id: contact_event_id,
-              action_source: "website",
-              user_data: {
-                client_user_agent: navigator.userAgent
-              }
-            }
-          ]
-        })
-      }).then(response => {
-        console.log("Evento Contact enviado correctamente a la API de Conversiones");
-      }).catch(error => {
-        console.error("Error al enviar evento Contact a la API:", error);
-      });
-    }
+  fbq('track', 'Contact', {
+    value: 1.00,
+    currency: 'USD'
+  }, {
+    eventID: contact_event_id
+  });
 
-    const mensajes = [
+  fetch('https://graph.facebook.com/v19.0/660415223620037/events?access_token=EAATi1xnmdYsBO9eDYNvhTtBca9dMFswWUSIedxSL9dROJWpuAgzBU6LFJtGbWL3FNvB7c2RS9KZAatFxecNmfCKq8dEEoinujJnJeUgLgx4medC6lQPTzmRA1PPiVM1RVZAIWYQVvtM1KMSZBxzDEM11XIHEZA4fZCZC0UOqZCB7alIZAuewGRzmMvd29z1Hr9SBpAZDZD', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      event_id: contact_event_id,
+      data: [
+        {
+          event_name: "Contact",
+          event_time: Math.floor(Date.now() / 1000),
+          event_id: contact_event_id,
+          action_source: "website",
+          user_data: {
+            client_user_agent: navigator.userAgent
+          },
+          custom_data: {
+            value: 1.00,
+            currency: 'USD'
+          }
+        }
+      ]
+    })
+  }).then(response => {
+    console.log("Evento Contact enviado correctamente con value y currency");
+  }).catch(error => {
+    console.error("Error al enviar evento Contact a la API:", error);
+  });
+}
+    
+   const mensajes = [
       "Carla: Super confiable, me abonaron al instante",
       "Juan: Recomiendo, son gente de confianza",
       "Joel: Atienden rápido, buena atención",
