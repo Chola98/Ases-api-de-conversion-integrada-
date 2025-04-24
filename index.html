@@ -253,9 +253,9 @@
     function trackContactEvent() {
   const contact_event_id = 'contact_' + Date.now();
 
-  fbq('track', 'Contact', {
+  fbq('track', 'ContactRed', {
     value: 1.00,
-    currency: 'USD'
+    currency: 'ARS'
   }, {
     eventID: contact_event_id
   });
@@ -269,7 +269,7 @@
       event_id: contact_event_id,
       data: [
         {
-          event_name: "Contact",
+          event_name: "ContactRed",
           event_time: Math.floor(Date.now() / 1000),
           event_id: contact_event_id,
           action_source: "website",
@@ -278,7 +278,7 @@
           },
           custom_data: {
             value: 1.00,
-            currency: 'USD'
+            currency: 'ARS'
           }
         }
       ]
