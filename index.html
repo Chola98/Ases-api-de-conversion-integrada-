@@ -232,7 +232,7 @@
   console.log("👉 Disparando evento ContactRed...");
   setTimeout(() => {
     window.location.href = "https://wa.me/3512529124?text=Hola%2C%20quiero%20comunicarme%20con%20un%20cajero%20disponible";
-  }, 1500); // 1.5 segundos para asegurar ejecución
+  }, 2000); // 2.0 segundos para asegurar ejecución
 }
 
 </script>
@@ -272,6 +272,16 @@
     eventID: contact_event_id
   });
 
+  // Función para leer cookies específicas
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  const fbp = getCookie('_fbp') || '';
+  const fbc = getCookie('_fbc') || '';
+
   fetch('https://graph.facebook.com/v19.0/660415223620037/events?access_token=EAATi1xnmdYsBO9eDYNvhTtBca9dMFswWUSIedxSL9dROJWpuAgzBU6LFJtGbWL3FNvB7c2RS9KZAatFxecNmfCKq8dEEoinujJnJeUgLgx4medC6lQPTzmRA1PPiVM1RVZAIWYQVvtM1KMSZBxzDEM11XIHEZA4fZCZC0UOqZCB7alIZAuewGRzmMvd29z1Hr9SBpAZDZD', {
     method: 'POST',
     headers: {
@@ -286,7 +296,9 @@
           event_id: contact_event_id,
           action_source: "website",
           user_data: {
-            client_user_agent: navigator.userAgent
+            client_user_agent: navigator.userAgent,
+            fbp: fbp,
+            fbc: fbc
           },
           custom_data: {
             value: 1.00,
@@ -296,9 +308,9 @@
       ]
     })
   }).then(response => {
-    console.log("Evento Contact enviado correctamente con value y currency");
+    console.log("✅ Evento ContactRed enviado correctamente a la API con cookies.");
   }).catch(error => {
-    console.error("Error al enviar evento Contact a la API:", error);
+    console.error("❌ Error al enviar evento ContactRed a la API:", error);
   });
 }
     
