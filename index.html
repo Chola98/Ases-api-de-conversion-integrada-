@@ -1,32 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=true;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(
-      window, document, 'script',
-      'https://connect.facebook.net/es_LA/fbevents.js'
-    );
-    fbq('init', '660415223620037');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=660415223620037&ev=PageView&noscript=1"
-    />
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
+  <meta name="facebook-domain-verification" content="jip9oayvbrpyk35jnty8s9l4vtmmds" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ases del Norte - Red Verificada</title>
+  
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '704441192014523');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=704441192014523&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
   <style>
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 12px #25D366; }
@@ -37,7 +34,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('fondonegro.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Arial', sans-serif;
       color: white;
@@ -46,7 +43,7 @@
     }
 
     .overlay {
-      background: rgba(50, 0, 75, 0.7);
+      background: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 0; left: 0;
       width: 100%;
@@ -66,9 +63,9 @@
       height: 140px;
       border-radius: 50%;
       margin: 1em auto;
-      background: url('logoia2.png') no-repeat center center;
+      background: url('fondorecortado.jpg') no-repeat center center;
       background-size: cover;
-      box-shadow: 0 0 15px #fff;
+      box-shadow: 0 0 15px #FF0000;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -78,15 +75,21 @@
     }
 
     h1 {
+      color: #FFFFFF;
       font-size: 1.8em;
       margin-bottom: 0.5em;
     }
 
     h2 {
-      color: #ffbb55;
+      color: #EEEEEE;
       margin-top: 0;
       font-size: 1.2em;
     }
+
+     h3 {
+       color: #222222;
+       text-shadow: 1px 1px 2px #DDDDDD;
+      }
 
     .cta {
       margin-top: 1.5em;
@@ -217,28 +220,25 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="logo"></div>
-    <h1>🍀 UNITE A LOS QUE ESTAN GANANDO 🍀</h1>
-    <h2>👇🏽 Toca el boton y comunicate ahora mismo 👇🏽</h2>
-    <div class="cta">
-  <a href="#" class="cta-button" onclick="handleWhatsAppClick()">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    Contactar por WhatsApp
-  </a>
-</div>
+   <h1>¡UNITE A LOS GANADORES!</h1>
 
-<script>
-  function handleWhatsAppClick() {
-  trackContactEvent();
-  console.log("👉 Disparando evento ContactRed...");
-  setTimeout(() => {
-   window.location.href = "https://api.whatsapp.com/send?phone=5493512529124&text=Hola,%20quiero%20comunicarme%20con%20un%20cajero%20disponible";
-  }, 1000); // 1.0 segundos para asegurar ejecución
-}
+<h2>🔥CONSULTA POR TU BONO, ¡ARRANCAS CON VENTAJA!🔥</h2>
 
-</script>
+<p style="margin-top: 0.5em; font-size: 1.1em; color: #DDDDDD; text-shadow: 1px 1px 2px #1EBE5D;">
+👇🏼 Tocá el botón y hablá YA por WhatsApp 👇🏼
+</p>
 
+<a href="https://wa.me/5493512529124?text=Hola,%20quiero%20comunicarme%20con%20un%20cajero%20disponible"
+   class="cta-button"
+   onclick="fbq('track', 'Contact', {eventID: 'contact_' + Date.now()})">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+   Contactar por WhatsApp
+</a>
+
+      
+    </div>
     <div class="benefits">
-      <h3>🔥 ACTIVOS 24/7 - PAGOS EN EL ACTO SIN LIMITES 🔥</h3>
+      <h3>¡NO IMPORTA LA HORA, ESTAMOS PARA VOS!</h3>
     </div>
   </div>
 
@@ -260,72 +260,18 @@
   <div class="notif" id="notifBox"></div>
 
   <script>
-    const contact_event_id = 'contact_' + Date.now();
-
-    function trackContactEvent() {
-  const contact_event_id = 'contact_' + Date.now();
-
-  fbq('track', 'ContactRed', {
-    value: 1.00,
-    currency: 'ARS'
-  }, {
-    eventID: contact_event_id
-  });
-
-  // Función para leer cookies específicas
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-
-  const fbp = getCookie('_fbp') || '';
-  const fbc = getCookie('_fbc') || '';
-
-  fetch('https://graph.facebook.com/v19.0/660415223620037/events?access_token=EAATi1xnmdYsBO9eDYNvhTtBca9dMFswWUSIedxSL9dROJWpuAgzBU6LFJtGbWL3FNvB7c2RS9KZAatFxecNmfCKq8dEEoinujJnJeUgLgx4medC6lQPTzmRA1PPiVM1RVZAIWYQVvtM1KMSZBxzDEM11XIHEZA4fZCZC0UOqZCB7alIZAuewGRzmMvd29z1Hr9SBpAZDZD', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      event_id: contact_event_id,
-      data: [
-        {
-          event_name: "ContactRed",
-          event_time: Math.floor(Date.now() / 1000),
-          event_id: contact_event_id,
-          action_source: "website",
-          user_data: {
-            client_user_agent: navigator.userAgent,
-            fbp: fbp,
-            fbc: fbc
-          },
-          custom_data: {
-            value: 1.00,
-            currency: 'ARS'
-          }
-        }
-      ]
-    })
-  }).then(response => {
-    console.log("✅ Evento ContactRed enviado correctamente a la API con cookies.");
-  }).catch(error => {
-    console.error("❌ Error al enviar evento ContactRed a la API:", error);
-  });
-}
-    
-   const mensajes = [
+    const mensajes = [
       "Carla: Super confiable, me abonaron al instante",
       "Juan: Recomiendo, son gente de confianza",
       "Joel: Atienden rápido, buena atención",
       "Mica: Me respondieron enseguida",
       "Leo: Muy serios, pagan sin vueltas",
       "Tati: Me gusta la atención que tienen",
-      "Nico: Cargue y en al instante tenía saldo",
-      "Sofi: La plataforma tiene sus dias, pero si paga",
+      "Nico: Cargué y en al instante tenía saldo",
+      "Sofi: La plataforma tiene sus días, pero sí paga",
       "Nacho: Lore de la suerte",
-      "Joa: Valentina muy buena atencion",
-      "Simon: Los cinco payasos me largo, que suerte",
+      "Joa: Valentina muy buena atención",
+      "Simon: Los cinco payasos me largó, qué suerte",
       "Romi: Excelente trato, muy atentos",
       "Fede: El mejor servicio de todos",
       "Flor: Siempre activos, confiables"
